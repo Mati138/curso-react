@@ -47,6 +47,8 @@ export const MyContext = createContext(); // El export lo usamos en caso de que 
 //      •	Se utiliza para envolver a los componentes que necesitan acceder a los datos del contexto.
 //      •	Este componente recibe una prop llamada value, que es el valor que deseas compartir con los componentes hijos.
 
+
+// import { MyContext } from 'ruta del archivo'  Importamos en caso de que estemos trabajando el createContext y el Provider en archivos diferentes, en caso de que lo manejemos en un mismo archivo no es necesario hacer uso de las importaciones.
 <MyContext.Provider value={ valor = 'valor'}>
   {/* Componentes hijos */}
 </MyContext.Provider>
@@ -54,7 +56,8 @@ export const MyContext = createContext(); // El export lo usamos en caso de que 
 
 // 3.	Uso en Componentes:
 //      •	En los componentes que necesitan acceder a los datos del contexto, usas el hook useContext para obtener el valor.
-
+import { useContext } from "react";
+import { MyContext } from 'ruta del archivo'  // En este caso siempre es necesario importarlo porque se lo usa en los componentes que necesitan del contexto (Siempre son archivos diferentes)
 const value = useContext(MyContext);
 
 
@@ -78,6 +81,7 @@ const ThemeProvider = ({ children }) => {
 };
 
 // Componente que consume el contexto
+import { useContext } from "react";
 const ThemedComponent = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 

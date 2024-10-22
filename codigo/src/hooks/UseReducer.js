@@ -1,3 +1,4 @@
+
 // El concepto de useReducer proviene de la idea de un “reductor” que se usa comúnmente en programación funcional. Un reducer es una función que recibe el estado actual y una “acción”, y con base en esa acción, devuelve un nuevo estado. Es como un controlador centralizado para manejar los cambios en el estado.
 
 // ¿Cómo funciona?
